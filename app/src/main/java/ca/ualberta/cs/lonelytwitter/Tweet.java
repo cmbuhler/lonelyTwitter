@@ -8,34 +8,43 @@ import java.util.Date;
  */
 
 public class Tweet {
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     private String message;
     private Date date;
-    private ArrayList<Mood> myMoodList;
 
     public Tweet(){
-        myMoodList = new ArrayList<Mood>();
         message = null;
         date = new Date(System.currentTimeMillis());
     }
 
     public Tweet(String message){
-        myMoodList = new ArrayList<Mood>();
         this.message = message;
         date = new Date(System.currentTimeMillis());
     }
 
     public Tweet(String message, Date date){
-        myMoodList = new ArrayList<Mood>();
         this.message = message;
         this.date = date;
 
     }
 
-    public ArrayList<Mood> getMyMoodList(){
-        return myMoodList;
-    }
-
-    public void addMoodToMyMoodList(Mood m){
-        myMoodList.add(m);
+    @Override
+    public String toString(){
+        return this.message;
     }
 }
